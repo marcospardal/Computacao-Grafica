@@ -64,7 +64,7 @@ Bcor = (b.B - toPut.B) / distance;
 ```
 
 # Extra
-De forma adicional, foram realizadas tentativas de rotação do triângulo para fazer uma animação, porém, não terminamos a tempo, mas foi possível gerar alguns resultados interessantes. Fizemos também, uma função para desenhar circulos (não obteve resultados satisfatórios), uma função que desenha retas das arestas de um triângulo, até seu baricentro, conseguindo assim o efeito de um triângulo preenchido e com cores que variam. 
+De forma adicional, foram realizadas tentativas de rotação do triângulo para fazer uma animação, porém, não terminamos a tempo, mas foi possível gerar alguns resultados interessantes. Fizemos também, uma função para desenhar circulos (não obteve resultados satisfatórios), uma função que desenha retas das arestas de um triângulo, até um de seus pontos, conseguindo assim o efeito de um triângulo preenchido e com cores que variam. 
 
 ![Triangulo_colorido](https://user-images.githubusercontent.com/49342589/85810093-4d373b80-b730-11ea-8bb3-c21dc72ad273.png)
 
