@@ -7,7 +7,7 @@ O trabalho consiste na implementação de três funções: PutPixel, DrawLine, D
 
 # Estratégias utilizadas
 ## Dados
-Foram utilizados dois structs, o primeiro, representa um pixel na tela e é formado por dois inteiros (X,Y) e quatro floats para as quatro bandas de cor(R,G,B,A). O segundo struct representa um triângulo, sendo composto de quatro pixels,sendo três vertices e o baricentro.
+Foram utilizados dois structs, o primeiro, representa um pixel na tela e é formado por dois inteiros (X,Y) e quatro floats para as quatro bandas de cor(R,G,B,A). O segundo struct representa um triângulo, sendo composto de três pixels, para representar os vertices.
 
 ## Funções
 
