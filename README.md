@@ -1,4 +1,4 @@
-# Computacao-Grafica
+# Computação Gráfica
 Repositório para apresentar os resultados das atividades práticas da disciplina de Introdução à Computação Gráfica, do período suplementar 2019.4 da UFPB.
 Equipe: Marcos Davi Nascimento, matrícula: 20180025335 e Tiago Tito Gomes Amorim, matrícula: 20180164900
 
