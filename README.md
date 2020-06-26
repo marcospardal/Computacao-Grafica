@@ -14,7 +14,8 @@ Foram utilizados dois structs, o primeiro, representa um pixel na tela e é form
 ### PutPixel
 A função PutPixel recebe como parâmetro um Pixel, e com base em suas coordenadas (x,y) e a equação x*4 + y*w*4 encontra o deslocamento necessário para encontrar aquele pixel na memória.
 
-![](images/PutPixel.png)
+![PutPixel](https://user-images.githubusercontent.com/49342589/85810047-2ed14000-b730-11ea-9574-0337f31bfb61.png)
+
 
 ### DrawLine
 A função DrawLine é baseada no algoritmo de Bresenham, com alguns ajustes de modo que funcione para os 8 octantes. 
@@ -34,7 +35,7 @@ if(abs(dy) > abs(dx)){
         incre_ne = 2 * (abs(dy) - abs(dx));
     }
  ```
- #### Verificação da direção em que deve ir a reta:
+ #### Verificação do sentido em que deve ir a reta:
  ```
   if(dx > 0)
     toPut.x++;
@@ -43,12 +44,12 @@ if(abs(dy) > abs(dx)){
 
  ``` 
  
- ![](images/DrawLine.png)
+![DrawLine](https://user-images.githubusercontent.com/49342589/85810014-18c37f80-b730-11ea-9c67-d45604680fff.png)
  
  ### DrawTriangle
  A função DrawTriangle, recebe um struct do tipo triangle, e com acesso aos seus aos seus vertices, utiliza a função DrawLine para desenhar o triangulo na tela.
 
- ![](images/DrawTriangle.png)
+![DrawTriangle](https://user-images.githubusercontent.com/49342589/85810077-414b7980-b730-11ea-8069-40dc55efd2c9.png)
  
  ### Interpolação linear das cores
 A interpolação linear das cores pode ser encontrada por meio da diferença de cor dos pontos dividido pela distância entre eles. Isto precisa ser feito para cada uma das bandas, RGBA. 
@@ -65,9 +66,9 @@ Bcor = (b.B - toPut.B) / distance;
 # Extra
 De forma adicional, foram realizadas tentativas de rotação do triângulo para fazer uma animação, porém, não terminamos a tempo, mas foi possível gerar alguns resultados interessantes. Fizemos também, uma função para desenhar circulos (não obteve resultados satisfatórios), uma função que desenha retas das arestas de um triângulo, até seu baricentro, conseguindo assim o efeito de um triângulo preenchido e com cores que variam. 
 
-![](images/Triangulo_colorido.png)
+![Triangulo_colorido](https://user-images.githubusercontent.com/49342589/85810093-4d373b80-b730-11ea-8bb3-c21dc72ad273.png)
 
-![](images/triangulo_circulo.png)
+![triangulo_circulo](https://user-images.githubusercontent.com/49342589/85810099-56280d00-b730-11ea-9825-621f0e659c6f.png)
 
 # Dificuldades
 Dentro das maiores dificuldades encontradas, podemos citar como destaque a matemática envolvida na implementação da simetria de um octante para os outros sete.
