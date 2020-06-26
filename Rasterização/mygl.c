@@ -22,108 +22,6 @@ void PutPixel(Pixel a){
     fb_ptr[offset+3] = a.A;
 }
 
-void ColorLine(Pixel a, Pixel b){
-    int dx = b.x - a.x;
-    int dy = b.y - a.y;
-
-    int d;
-    int incr_e;
-    int incre_ne;
-    int incr_n = 2 * abs(dx);
-
-    float Rcor, Gcor, Bcor;
-
-    if(abs(dy) > abs(dx)){
-        d = 2 * abs(dx) - abs(dy);
-        incr_e = 2 * abs(dx);
-        incre_ne = 2 * (abs(dx) - abs(dy));
-    }else{
-        d = 2 * abs(dy) - abs(dx);
-        incr_e = 2 * abs(dy);
-        incre_ne = 2 * (abs(dy) - abs(dx));
-    }
-
-    Pixel toPut = a;
-    
-    PutPixel(toPut);
-    float distance = sqrt(pow(dx,2.0) + pow(dy,2.0));
-        Rcor = (b.R - toPut.R) / distance;
-        Gcor = (b.G - toPut.G) / distance;
-        Bcor = (b.B - toPut.B) / distance;
-    if(dx == 0){
-        
-        Rcor = (b.R - toPut.R) / distance;
-        Gcor = (b.G - toPut.G) / distance;
-        Bcor = (b.B - toPut.B) / distance;
-        while(toPut.y != b.y){
-            if(dy > 0)
-                toPut.y++;
-            else
-                toPut.y--;
-
-            PutPixel(toPut);
-            toPut.R += Rcor;
-            toPut.G += Gcor;
-            toPut.B += Bcor;
-            
-        }
-    }else if(abs(dy) > abs(dx)){
-        while(toPut.x != b.x){
-            if(d <= 0){
-                d += incr_n;
-                if(dy > 0)
-                    toPut.y++;
-                else
-                    toPut.y--;
-            }else{
-                d += incre_ne;
-                if(dx > 0)
-                    toPut.x++;
-                else
-                    toPut.x--;
-                
-                if(dy > 0)
-                    toPut.y++;
-                else
-                    toPut.y--;
-            }
-
-            PutPixel(toPut);
-            toPut.R += Rcor;
-            toPut.G += Gcor;
-            toPut.B += Bcor;
-        }
-    }else{
-       
-        while(toPut.x != b.x){
-            if(d <= 0){
-                d += incr_e;
-                if(dx > 0)
-                    toPut.x++;
-                else
-                    toPut.x--;
-            }else{
-                d += incre_ne;
-                if(dx > 0)
-                    toPut.x++;
-                else
-                    toPut.x--;
-
-                if(dy > 0)
-                    toPut.y++;
-                else  
-                    toPut.y--;
-            }
-
-            PutPixel(toPut);
-            toPut.R += Rcor;
-            toPut.G += Gcor;
-            toPut.B += Bcor;
-        }
-    }
-    
-}
-
 void DrawLine(Pixel a, Pixel b){
     int dx = b.x - a.x;
     int dy = b.y - a.y;
@@ -246,7 +144,7 @@ void DrawTriangle(Pixel a, Pixel b, Pixel c){
     Pixel toPut = a;
     
     PutPixel(toPut);
-    ColorLine(toPut, c);
+    DrawLine(toPut, c);
 
     float Rcor, Gcor, Bcor;
     float distance = sqrt(pow(dx,2.0) + pow(dy,2.0));
@@ -267,7 +165,7 @@ void DrawTriangle(Pixel a, Pixel b, Pixel c){
                 toPut.y--;
 
             PutPixel(toPut);
-            ColorLine(toPut, c);
+            DrawLine(toPut, c);
             toPut.R += Rcor;
             toPut.G += Gcor;
             toPut.B += Bcor;
@@ -295,7 +193,7 @@ void DrawTriangle(Pixel a, Pixel b, Pixel c){
             }
 
             PutPixel(toPut);
-            ColorLine(toPut, c);
+            DrawLine(toPut, c);
             toPut.R += Rcor;
             toPut.G += Gcor;
             toPut.B += Bcor;
@@ -323,7 +221,7 @@ void DrawTriangle(Pixel a, Pixel b, Pixel c){
             }
 
             PutPixel(toPut);
-            ColorLine(toPut,c);
+            DrawLine(toPut,c);
             toPut.R += Rcor;
             toPut.G += Gcor;
             toPut.B += Bcor;
