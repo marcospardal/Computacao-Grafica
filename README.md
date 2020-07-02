@@ -2,6 +2,7 @@
 Repositório para apresentar os resultados das atividades práticas da disciplina de Introdução à Computação Gráfica, do período suplementar 2019.4 da UFPB.
 Equipe: Marcos Davi Nascimento, matrícula: 20180025335 e Tiago Tito Gomes Amorim, matrícula: 20180164900
 
+# Atividade 1
 # Definição da atividade
 O trabalho consiste na implementação de três funções: PutPixel, DrawLine, DrawTriangle. Juntas, são capazes de desenhar um triângulo usando o OpenGL.
 
@@ -72,3 +73,15 @@ De forma adicional, foram realizadas tentativas de rotação do triângulo para 
 
 # Dificuldades
 Dentro das maiores dificuldades encontradas, podemos citar como destaque a matemática envolvida na implementação da simetria de um octante para os outros sete.
+
+# Atividade 2
+# Definição
+O trabalho 2 consistia apenas na execução de um programa, que faz uso de shaders para desenhar um triângulo colorido na tela. O intuito do trabalho é verificar se a instalação do modern OpenGL foi feita da maneira correta.
+
+# Resultados
+![simplescreenrecorder-2020-07-02_10 29 25](https://user-images.githubusercontent.com/49342589/86403384-fbd50200-bc83-11ea-87a4-a796ab32e723.gif)
+
+![link para o vídeo no youtube](https://youtu.be/z2vvUuqjJzA)
+
+# Dificuldades
+De início, o programa apresentou um triângulo em branco, pois ocorreu um erro ao carregar os shaders, isso foi facilmente corrigido digitando o seguinte comando no terminal "export MESA_GL_VERSION_OVERRIDE=3.3"
