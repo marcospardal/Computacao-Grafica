@@ -81,7 +81,7 @@ O trabalho 2 consistia apenas na execução de um programa, que faz uso de shade
 # Resultados
 ![simplescreenrecorder-2020-07-02_10 29 25](https://user-images.githubusercontent.com/49342589/86403384-fbd50200-bc83-11ea-87a4-a796ab32e723.gif)
 
-![link para o vídeo no youtube](https://youtu.be/z2vvUuqjJzA)
+link para o vídeo no youtube: https://youtu.be/z2vvUuqjJzA
 
 # Dificuldades
 De início, o programa apresentou um triângulo em branco, pois ocorreu um erro ao carregar os shaders, isso foi facilmente corrigido digitando o seguinte comando no terminal "export MESA_GL_VERSION_OVERRIDE=3.3"
