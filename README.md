@@ -141,6 +141,54 @@ Realizar modificações nas matrizes model, view e projection de forma que gerem
 ### Resultado
 ![exercicioCinco](https://user-images.githubusercontent.com/49342589/88868249-054f7c80-d1e6-11ea-8631-1ea10f023eaf.png)
 
+# Atividade 4
+## Definição
+Familiarizar os alunos com os modelos de iluminação tradicionalemente utilizados na rasterização: ambiente, difuso e especular. Deverão ser implementados os três modelos utilizando vertex shader do OpenGL.
 
+## Exercício 1
+### Definição
+O exercício 1 consistia em modificar o vertex shader para incluir o modelo difuso. Para isto precisamos calcular um novo valor de vetor normal N, e um novo vetor L apontando do vértice para a fonte de luz.
+
+### Vetores Calculados
+vec3 L = normalize ( I_p_pos - ( model_mat * vec4 ( obj_spc_vertex_pos , 1.0) ) .←- xyz ) ; 
+
+vec3 N = normalize ( mat3 ( transpose ( inverse ( model_mat ) ) ) * obj_spc_N ) ;
+
+### Modelo difuso:
+I = Ia*κa + Ip*κd *(N*L)
+
+### Parâmetros
+Ia = (0.2,0.2,0.2)
+
+ka = (0,0,1)
+
+Posição da fonte de luz = (-2,2,1.5)
+
+Ip = (0.8,0.8,0.8)
+
+kd = (0,0,0.8)
+
+### Resultado
+![exerc_1_resultado](https://user-images.githubusercontent.com/49342589/89835981-2dbb6d00-db3c-11ea-88f1-e37a7a516a08.png)
+
+## Exercício 2
+### Definição 
+O exercício 2 consistia em modificar o vertex shader do exercício anterior para incluir além dos dois modelos (ambiente e difuso), também o modelo especular. Para isto é necessário calcular dois vetores (R e V).
+
+### Vetores Calculados
+vec3 R = - reflect (L , N ) ;
+
+vec3 V = normalize ( cam_pos - ( model_mat * vec4 ( obj_spc_vertex_pos , 1.0) ) .←- xyz ); 
+
+### Modelo de Phong
+I = Iaκa + Ip(κd *(L*N) + κs(R*V)^ n )
+
+### Parâmetros
+Ks = (1,1,1)
+
+n = 64
+
+### Resultado
+![exerc_2_resultado](https://user-images.githubusercontent.com/49342589/89836383-06b16b00-db3d-11ea-853a-8da1acf1bfb6.png)
 
 
